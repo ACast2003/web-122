@@ -1,0 +1,314 @@
+/*  Abby Cast 05/10/26 Subject: Web122 Final */
+@layer reset, theme, global, layout, modules, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    height: auto;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --primary-color: #6268b2;
+    --primary-accent: #c6c8e6;
+    --secondary-color: #f6cbdc;
+    --secondary-color-accent: #f892ba;
+    --accent-color-1: #ffcf6e;
+    --accent-color-2: #fbd504;
+    --font-main: "Helvetica Neue", "Nimbus Sans", Arial, sans-serif;
+    --font-heading: Georgia, sans-serif;
+    --gap-size: 1.5rem;
+  }
+  @font-face {
+    .montserrat {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+}
+@layer global {
+  body {
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+    min-height: 100vh;
+    text-align: left;
+  }
+
+main {
+  flex: 1;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+}
+footer {
+  flex: 1;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--secondary-color-accent);
+}
+img{
+      width: 100%;
+  height: auto;
+}
+}
+@layer layout {
+  .footer-menu {
+    flex-flow: column;
+  }
+  .container {
+max-inline-size: 1080px;
+margin-inline: auto;
+}
+  .nav-header {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+    height: auto;
+  }
+
+button {
+  padding: 0.5em 0.7em;
+  border: 1px solid #8d8d8d;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.menu {
+  position: relative;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  position: absolute;
+  top: 0.2em;
+  right: 0.1em;
+  border: 0;
+  background-color: transparent;
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  line-height: 0.4;
+  text-indent: 5em;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1001;
+  color: #6268b2;
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  top: 0.6em;
+  left: 0.2em;
+  display: block;
+  content: "\2261";
+  text-indent: 0;
+}
+.dropdown-menu {
+  display: none;
+  z-index: 101;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.dropdown-items {
+  padding-inline-start: 0;
+  margin: 0;
+  list-style-type: none;
+  border: 1px solid var(--primary-color);
+}
+
+.dropdown-items > li + li {
+  border-top: 1px solid var(--primary-color);
+}
+.dropdown-items > li > a {
+  display: block;
+  padding: 0.5em 1.5em;
+  background-color: white;
+  color: var(--foreground-color-1);
+  text-decoration: none;
+}
+
+.dropdown-items > li > a:hover {
+  background-color: var(--primary-color);
+}
+  @media (min-width: 650px) {
+    .dropdown-toggle {
+      display: none;
+    }
+    .nav-wrapper {
+        display: flex;
+    }
+    .site-nav {
+      display: flex;
+      flex-flow: row;
+      gap: var(--gap-size);
+      margin: 0;
+      padding: 0.5em;
+      list-style-type: none;
+      justify-content: center;
+    }
+    
+    .site-nav > li > a {
+      display: block;
+      padding: 0.5em 1em;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown-menu {
+      position: relative;
+      display: flex;
+      top: auto;
+      right: auto;
+      justify-content: center;
+    }
+    .container {
+        display: flex;
+        flex-flow: row;
+    }
+    article{
+        flex: 2;
+        padding: 2em;
+    }
+    aside{
+        flex: 1;
+        margin-top: 8em;
+    }
+    .dropdown {
+      display: block;
+      justify-content: right;
+    }
+    footer{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-links{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+    .container > img {
+        height: auto;
+    }
+  }
+  .footer-legal{
+    text-align: center;
+  }
+}
+@layer modules {
+  .tile {
+    background-color: var(--primary-accent);
+    border-radius: 0.875rem;
+    box-shadow: 3px 8px 15px rgb(0 0 0 / 0.3);
+    padding: 1.875rem;
+  }
+  .socials-list{
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    gap: 16px;
+  }
+  .primary-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  .donate-button{
+    background-color: var(--primary-color);
+    border-radius: 25%;
+    color: white;
+  }
+  .donation-tile{
+    background-color: rgb(255, 255, 255);
+    margin: 16em;
+  }
+  .gallery {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+grid-auto-rows: 1fr;
+grid-gap: 1em;
+grid-auto-flow: dense;
+  }
+  .gallery > figure {
+margin: 0;
+  }
+  .contact-form{
+    border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 2em;
+  display: flex;
+  flex-flow:column;
+  width: 80vw;
+  }
+  .footer-socials > ul{
+    list-style: none;
+  }
+  .nav-logo-link > img{
+    width: 100px;
+    height: auto;
+  }
+
+}
+@layer utilities {
+  .dropdown.is-open .dropdown-menu {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

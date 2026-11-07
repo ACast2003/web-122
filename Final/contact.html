@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Abby Cast" />
+    <meta name="description" content="home page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact us</title>
+  </head>
+  <body>
+    <header class="nav-header">
+      <nav class="dropdown" id="dropdown">
+        <div class="nav-wrapper">
+          <a href="index.html" class="nav-logo-link">
+            <img
+              src="assets/whatiflogo.avif"
+              alt="logo for the what if non-profit"
+              width="100"
+              height="100"
+            />
+          </a>
+          <button type="button" class="dropdown-toggle" id="dropdown-toggle">
+            Dropdown Menu
+          </button>
+          <div class="dropdown-menu">
+            <ul class="site-nav dropdown-items">
+              <li><a href="about.html">About</a></li>
+              <li><a href="event.html">Event</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donations.html">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <form class="contact-form">
+          <h2>Get in touch with us</h2>
+
+          <label for="first-name">First Name</label>
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="Your name.."
+          />
+
+          <label for="last-name">Last Name</label>
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Your last name.."
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Your email address.."
+          />
+          <label for="phone-number">Phone number</label>
+          <input
+            type="text"
+            id="phone-number"
+            name="phone-number"
+            placeholder="Your phone number.."
+          />
+
+          <label for="subject">Subject</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something.."
+            style="height: 200px"
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <div class="footer-menu">
+          <h4>Main Menu</h4>
+          <ul class="footer-nav-menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="donations.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li>info@whatifpuppets.org</li>
+            <li>816-756-3500</li>
+            <li>
+              300 E. 39th St., Suite LL2D <br />
+              Kansas City, MO, 64111
+            </li>
+          </ul>
+        </div>
+        <div class="footer-socials">
+          <h4>Follow us</h4>
+          <ul class="socials-list">
+            <li>
+              <a href="https://www.facebook.com/whatifpuppets"
+                ><img src="assets/facebook.png" alt="facebook logo"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/whatifpuppets/"
+                ><img src="assets/instagram.png" alt="instagram logo"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@WhatifPuppets"
+                ><img src="assets/youtube.png" alt youtube logo
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>What if Puppets (formerly Mesner Puppet Theater) is a 501(c)3</p>
+        <p>EIN: 43-1458119</p>
+        <p>Click <a>here</a> for information on our privacy policy.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
